@@ -1,3 +1,5 @@
+import { performance } from 'perf_hooks';
+
 
 var express = require('express');
 var port = process.env.PORT || 8080;
@@ -15,7 +17,10 @@ mongoose.connect('mongodb://potato450:potatoman1@ds019829.mlab.com:19829/milk', 
         throw err;
     } else {
         centers = db.collection("centers");
-        console.log('Connected to mLabs')
+        performance = db.collection('perfomance');
+        festivals = db.collection('festivals');
+        socialGatherings = db.collection('social_gatherings');
+        console.log('Connected to mLabs'); 
     }
 });
 
